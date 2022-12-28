@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="openocr:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/openocr_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="openocr" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="openocr/web/Web" />
+    </root>
+  </artifact>
+</component>
