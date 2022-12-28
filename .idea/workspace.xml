@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="openocr:war exploded" />
     </artifacts-to-build>
   </component>
+=======
+>>>>>>> e451e39 (update2)
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="70d33c47-bc9d-42ee-9bc9-1d41791cc63d" name="Changes" comment="update">
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/openocr_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -17,11 +21,15 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
+=======
+    <list default="true" id="1d5eae47-9768-475d-b419-128da55ba1f4" name="Changes" comment="" />
+>>>>>>> e451e39 (update2)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -45,6 +53,12 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JEOcf8T5FIBLQ27lU0zgnMeM5f" />
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2JXt2ADCWSg4RDVdx4A6U50PSXY" />
+>>>>>>> e451e39 (update2)
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,6 +68,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "list.type.of.created.stylesheet": "CSS",
@@ -159,6 +174,13 @@
     </configuration>
     <configuration name="Tomcat 9.0.70" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.70" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
+=======
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.70" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.70" ALTERNATIVE_JRE_ENABLED="false">
+>>>>>>> e451e39 (update2)
       <deployment>
         <artifact name="openocr:war exploded">
           <settings>
@@ -167,13 +189,18 @@
         </artifact>
       </deployment>
       <server-settings>
+<<<<<<< HEAD
         <option name="BASE_DIRECTORY_NAME" value="a90c47b9-ffa5-4e52-86b0-5ccb7c064afd" />
+=======
+        <option name="BASE_DIRECTORY_NAME" value="4997668a-7792-4627-9b21-622d9e48b3b2" />
+>>>>>>> e451e39 (update2)
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+<<<<<<< HEAD
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="61329" />
       </RunnerSettings>
@@ -222,6 +249,8 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+=======
+>>>>>>> e451e39 (update2)
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -244,14 +273,18 @@
         </option>
       </method>
     </configuration>
+<<<<<<< HEAD
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.70" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.27" />
     </list>
+=======
+>>>>>>> e451e39 (update2)
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="70d33c47-bc9d-42ee-9bc9-1d41791cc63d" name="Changes" comment="" />
       <created>1671639857475</created>
       <option name="number" value="Default" />
@@ -270,6 +303,15 @@
       <updated>1671643641923</updated>
     </task>
     <option name="localTasksCounter" value="2" />
+=======
+      <changelist id="1d5eae47-9768-475d-b419-128da55ba1f4" name="Changes" comment="" />
+      <created>1672236046535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672236046535</updated>
+      <workItem from="1672236047721" duration="1000" />
+    </task>
+>>>>>>> e451e39 (update2)
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,8 +328,11 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
+=======
+>>>>>>> e451e39 (update2)
 </project>
