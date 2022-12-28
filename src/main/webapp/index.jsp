@@ -2,12 +2,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Open OCR - Free tool</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}style.css"/>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+<%@include file="header.jsp" %>
+
+<section class="section-1">
+    <h1><%= "Hello World!" %></h1>
+    <br/>
+    <a href="hello-servlet">Hello Servlet</a>
+</section>
+
+<section class="section-2">
+</section>
+
+
+<%@include file="footer.jsp" %>
+
 </body>
 </html>
