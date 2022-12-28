@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<%@include file="header.jsp" %>
+<%@include file="Header/header.jsp" %>
 
 <section class="section-1">
     <h1><%= "Hello World!" %></h1>
@@ -19,7 +19,7 @@
 </section>
 
 
-<%@include file="footer.jsp" %>
+<%@include file="Footer/footer.jsp" %>
 
 </body>
 </html>
