@@ -48,7 +48,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
   <component name="RunManager">
@@ -149,7 +150,9 @@
       <option name="presentableId" value="Default" />
       <updated>1672305363239</updated>
       <workItem from="1672305364983" duration="30000" />
-      <workItem from="1672305400213" duration="522000" />
+      <workItem from="1672305400213" duration="576000" />
+      <workItem from="1672388716905" duration="1838000" />
+      <workItem from="1672408209460" duration="393000" />
     </task>
     <servers />
   </component>
