@@ -108,9 +108,8 @@
 
 
         .file-container .wrapper form{
-            height: 167px;
+            height: 297px;
             display: flex;
-            cursor: pointer;
             margin: 30px 0;
             align-items: center;
             justify-content: center;
@@ -198,9 +197,47 @@
             font-size: 16px;
         }
 
+        .wrapper .btn-container{
+            width: 100%;
+            text-align: center;
+        }
 
 
+        .wrapper .btn-container .btn {
+            width: 50%;
+            background-image: linear-gradient(#0dccea, #0d70ea);
+            border: none;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+            color: #fff;
+            cursor: pointer;
+            font-family: Montserrat,sans-serif;
+            font-size: .9em;
+            padding: 10px 15px;
+            user-select: none;
+            opacity: .7;
+        }
 
+        .wrapper .btn-container .btn:hover{
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            -webkit-transition: opacity 0.2s ease-in-out;
+            -moz-transition: opacity 0.2s ease-in-out;
+            -ms-transition: opacity 0.2s ease-in-out;
+            -o-transition: opacity 0.2s ease-in-out;
+        }
+
+        .wrapper form .bi-cloud-upload{
+            cursor: pointer;
+        }
+
+
+        .wrapper form .file-input{
+            margin-top: 30px;
+            color:rgb(31, 37, 83);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: #292c2f;
+        }
 
 
 
@@ -228,6 +265,14 @@
             margin: 0;
         }
 
+        .resultat p{
+            font-size: 13px;
+            width: 50%;
+            margin: auto;
+            color: red;
+        }
+
+
     </style>
 </head>
 
@@ -252,13 +297,18 @@
 
     <div class="wrapper">
         <div class="header-text">OCR - Free tool</div>
-        <form action="#">
-            <input class="file-input" type="file" name="file" hidden>
+        <form action="ServletUploadFile" method="POST" enctype="multipart/form-data">
             <i class="bi bi-cloud-upload"></i>
             <p>Déposez votre  document PDF, PNG ou JPG</p>
+            <input class="file-input" type="file" name="file">
         </form>
-        <section class="progress-area"></section>
-        <section class="uploaded-area"></section>
+        <div class="btn-container">
+            <button class="btn" type="button">Recuperer texte</button>
+        </div>
+    </div>
+
+    <div class="resultat">
+        <p><%= request.getAttribute("Message") %></p>
     </div>
 
 </section>
@@ -273,66 +323,24 @@
 
 
 <script>
-    const form = document.querySelector("form"),
-        fileInput = document.querySelector(".file-input"),
-        progressArea = document.querySelector(".progress-area"),
-        uploadedArea = document.querySelector(".uploaded-area");
-    form.addEventListener("click", () =>{
+
+    const icon = document.querySelector("form .bi-cloud-upload");
+    const fileInput = document.querySelector(".file-input");
+    const btn = document.querySelector(".wrapper .btn-container .btn")
+    const form = document.querySelector(".wrapper form")
+
+
+    icon.addEventListener("click", () =>{
         fileInput.click();
     });
-    fileInput.onchange = ({target})=>{
-        let file = target.files[0];
-        if(file){
-            let fileName = file.name;
-            if(fileName.length >= 12){
-                let splitName = fileName.split('.');
-                fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
-            }
-            uploadFile(fileName);
-        }
-    }
-    function uploadFile(name){
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/upload.php");
-        xhr.upload.addEventListener("progress", ({loaded, total}) =>{
-            let fileLoaded = Math.floor((loaded / total) * 100);
-            let fileTotal = Math.floor(total / 1000);
-            let fileSize;
-            (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
-            let progressHTML = `<li class="row">
-                          <i class="bi bi-file-earmark-text"></i>
-                          <div class="content">
-                            <div class="details">
-                              <span class="name">${name} • Uploading</span>
-                              <span class="percent">${fileLoaded}%</span>
-                            </div>
-                            <div class="progress-bar">
-                              <div class="progress" style="width: ${fileLoaded}%"></div>
-                            </div>
-                          </div>
-                        </li>`;
-            uploadedArea.classList.add("onprogress");
-            progressArea.innerHTML = progressHTML;
-            if(loaded == total){
-                progressArea.innerHTML = "";
-                let uploadedHTML = `<li class="row">
-                            <div class="content upload">
-                              <i class="bi bi-file-earmark-text"></i>
-                              <div class="details">
-                                <span class="name">${name} • Uploaded</span>
-                                <span class="size">${fileSize}</span>
-                              </div>
-                            </div>
-                            <i class="bi bi-patch-check"></i>
-                          </li>`;
-                uploadedArea.classList.remove("onprogress");
-                uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
-            }
-        });
-        let data = new FormData(form);
-        xhr.send(data);
-    }
 
+    btn.addEventListener("click", () => {
+        if(fileInput.files[0]){
+            form.submit()
+        }else{
+            alert("Veuillez inserer un fichier !");
+        }
+    })
 
     // Date
 
