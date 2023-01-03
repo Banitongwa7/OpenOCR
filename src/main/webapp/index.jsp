@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
     <link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Open OCR - Free tool</title>
     <style>
         * {
@@ -349,6 +351,24 @@
     let year = date.getFullYear()
 
     span.innerText = year
+</script>
+
+
+<script>
+
+    const btn2 = document.querySelector(".btn-container .btn-test")
+
+    btn2.addEventListener("click", () => {
+        Swal.fire({
+            title: 'Sweet!',
+            text: 'Modal with a custom image.',
+            imageUrl: 'https://unsplash.it/400/200',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+        })
+    })
+
 </script>
 
 </body>

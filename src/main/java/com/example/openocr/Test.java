@@ -1,5 +1,4 @@
 package com.example.openocr;
-
 import java.sql.Connection;
 
 public class Test {
