@@ -39,7 +39,6 @@ public class ServletUploadFile extends HttpServlet {
             System.out.println(filePart.getName());
             System.out.println(filePart.getSize());
             System.out.println(filePart.getContentType());
-
             inputStream = filePart.getInputStream();
         }
 
