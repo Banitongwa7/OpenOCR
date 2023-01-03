@@ -28,7 +28,7 @@ public class ServletUploadFile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Process process = new Process();
+        //Process process = new Process();
 
         InputStream inputStream = null;
         String message = null;
@@ -44,7 +44,7 @@ public class ServletUploadFile extends HttpServlet {
             inputStream = filePart.getInputStream();
         }
 
-        int row = process.saveFileDatabase(inputStream);
+        int row = new Process().saveFileDatabase(inputStream);
 
         if (row > 0) {
             message = "File save to database";

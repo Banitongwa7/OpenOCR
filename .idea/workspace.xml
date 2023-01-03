@@ -77,9 +77,22 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.27">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.70">
     <configuration name="Process" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.openocr.Process" />
+      <module name="openocr" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.openocr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.openocr.Test" />
       <module name="openocr" />
       <extension name="coverage">
         <pattern>
@@ -269,11 +282,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.Process" />
+      <item itemvalue="Application.Test" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.27" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.70" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Process" />
       </list>
     </recent_temporary>
@@ -299,7 +314,7 @@
       <workItem from="1672692168234" duration="13000" />
       <workItem from="1672760173742" duration="1719000" />
       <workItem from="1672761948108" duration="129000" />
-      <workItem from="1672762196078" duration="3746000" />
+      <workItem from="1672762196078" duration="5005000" />
     </task>
     <servers />
   </component>
@@ -316,5 +331,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
