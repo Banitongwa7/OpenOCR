@@ -11,11 +11,11 @@ import java.io.InputStream;
 @MultipartConfig(maxFileSize = 16177215) // limite 16MB
 public class ServletUploadFile extends HttpServlet {
 
-    private Process process;
+    //private Process process;
 
     @Override
     public void init() {
-        process = new Process();
+        //process = new Process();
     }
 
 
@@ -27,6 +27,8 @@ public class ServletUploadFile extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Process process = new Process();
 
         InputStream inputStream = null;
         String message = null;

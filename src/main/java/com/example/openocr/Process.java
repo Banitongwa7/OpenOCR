@@ -11,6 +11,7 @@ public class Process {
 
     public int saveFileDatabase(InputStream file){
         Connection connect = Database.connectDatabase();
+        System.out.println(connect);
 
         int row = 0;
 
