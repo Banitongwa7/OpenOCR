@@ -5,6 +5,7 @@ target/
 
 ### IntelliJ IDEA ###
 .idea/
+/.idea/
 *.iws
 *.iml
 *.ipr
@@ -33,3 +34,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/mysql-data/
+!/mysql-data/

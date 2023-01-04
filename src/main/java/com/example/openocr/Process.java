@@ -7,24 +7,18 @@ import java.sql.SQLException;
 
 public class Process {
 
-    private final Connection connect;
     private static final String saveFile = "INSERT INTO files (fichier) values (?)";
 
-    public Process(){
-        this.connect = Database.connectDatabase();
-        System.out.println(this.connect);
-    }
-
-    public int saveFileDatabase(InputStream file){
-        //Connection connect = Database.connectDatabase();
-        //System.out.println(connect);
+    public int saveFileDatabase(InputStream file) {
+        Connection connect = Database.connectDatabase();
+        System.out.println(connect);
 
         int row = 0;
 
-        try{
+        try {
             PreparedStatement pr = connect.prepareStatement(saveFile);
 
-            if(file != null){
+            if (file != null) {
                 pr.setBlob(1, file);
             }
 
@@ -36,5 +30,10 @@ public class Process {
         }
 
         return row;
+    }
+
+    public static void main(String[] args) {
+        Connection connect = Database.connectDatabase();
+        System.out.println(connect);
     }
 }
