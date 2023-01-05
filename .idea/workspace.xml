@@ -10,7 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="656a39f5-1887-45bb-ad8a-09dc32385b99" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,14 +284,25 @@
         </option>
       </method>
     </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Process" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.27" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.70" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Process" />
       </list>
@@ -315,7 +332,7 @@
       <workItem from="1672762196078" duration="5683000" />
       <workItem from="1672784324169" duration="927000" />
       <workItem from="1672785269605" duration="96000" />
-      <workItem from="1672933985298" duration="8000" />
+      <workItem from="1672933985298" duration="5768000" />
     </task>
     <servers />
   </component>
@@ -332,21 +349,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

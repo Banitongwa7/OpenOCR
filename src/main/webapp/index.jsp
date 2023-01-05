@@ -330,6 +330,65 @@
     const fileInput = document.querySelector(".file-input");
     const btn = document.querySelector(".wrapper .btn-container .btn")
     const form = document.querySelector(".wrapper form")
+    var extension = [".jpg", ".jpeg", ".png", ".pdf"];
+
+    // Toast success upload file
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    // Check extension of file : only PNG, PDF and JPG
+    const ModalCheckFile = () => {
+        Swal.fire({
+            title: 'Extension de fichier',
+            text: "Veuillez inserer un fichier avec l'extension suivant PDF, PNG, JPG ou JPEG",
+            icon: 'warning',
+            showCloseButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: "D'accord"
+        })
+    }
+
+    // Check size of file
+    const ModalSizeFile = () => {
+        Swal.fire({
+            title: 'Fichier trop volumineux',
+            text: "Veuillez inserer un fichier avec une taille inferieur à 16 MB",
+            icon: 'warning',
+            showCloseButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: "D'accord"
+        })
+    }
+
+    // Validation extension file
+    const ValidateFile = (InputFile) => {
+        var test = false
+        if(InputFile.size > 16177215){
+            return 1
+        }
+
+        for(var i = 0; i < extension.length ; i++){
+            if(InputFile.name.substring(InputFile.name.length - extension.length, InputFile.name.length) == extension[i]){
+                test = true
+                break
+            }
+        }
+
+        if(test){
+            return 0
+        }else{
+            return 2
+        }
+    }
 
 
     icon.addEventListener("click", () =>{
@@ -338,38 +397,44 @@
 
     btn.addEventListener("click", () => {
         if(fileInput.files[0]){
-            form.submit()
+
+            let result = ValidateFile(fileInput.files[0])
+
+            if (result == 1){
+                ModalSizeFile()
+            }else if (result == 2){
+                ModalCheckFile()
+            }else{
+                form.submit((e) => {
+                    e.preventDefault();
+                    console.log("Hello submit")
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Recuperation des textes en cours.'
+                })
+            }
+
         }else{
-            alert("Veuillez inserer un fichier !");
+            Swal.fire(
+                'Pas de fichier ?',
+                "Vous n'avez pas inserer un fichier",
+                'question'
+            )
         }
     })
+
+
 
     // Date
 
     let span = document.querySelector(".signature .date")
     let date = new Date
     let year = date.getFullYear()
-
     span.innerText = year
 </script>
 
-
-<script>
-
-    const btn2 = document.querySelector(".btn-container .btn-test")
-
-    btn2.addEventListener("click", () => {
-        Swal.fire({
-            title: 'Sweet!',
-            text: 'Modal with a custom image.',
-            imageUrl: 'https://unsplash.it/400/200',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
-        })
-    })
-
-</script>
 
 </body>
 

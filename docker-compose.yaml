@@ -4,7 +4,7 @@ services:
   # MYSQL
   db:
     image: mysql
-    container_name: mysqldb
+    container_name: mysql
     ports:
       - 3306:3306
     volumes:

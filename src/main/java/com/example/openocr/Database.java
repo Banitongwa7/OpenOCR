@@ -9,7 +9,7 @@ public class Database {
         Connection connect = null;
         String url = "jdbc:mysql://localhost:3306/openocrdb"; // "jdbc:mysql://localhost:3306/mydatabase?useSSL=false";
         String user = "dba";
-        String password = "dbaPass"; // "david123";
+        String password = "dbaPass";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connect = DriverManager.getConnection(url, user, password);

@@ -32,8 +32,10 @@ public class Process {
         return row;
     }
 
-    public static void main(String[] args) {
-        Connection connect = Database.connectDatabase();
-        System.out.println(connect);
+    public String getContentText(InputStream file){
+        String content = "";
+
+
+        return content;
     }
 }
