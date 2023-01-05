@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="656a39f5-1887-45bb-ad8a-09dc32385b99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +314,8 @@
       <workItem from="1672761948108" duration="129000" />
       <workItem from="1672762196078" duration="5683000" />
       <workItem from="1672784324169" duration="927000" />
-      <workItem from="1672785269605" duration="52000" />
+      <workItem from="1672785269605" duration="96000" />
+      <workItem from="1672933985298" duration="8000" />
     </task>
     <servers />
   </component>
