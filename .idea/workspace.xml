@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="656a39f5-1887-45bb-ad8a-09dc32385b99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/openocr/ServletUploadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +326,8 @@
       <workItem from="1672762196078" duration="5683000" />
       <workItem from="1672784324169" duration="927000" />
       <workItem from="1672785269605" duration="96000" />
-      <workItem from="1672933985298" duration="5768000" />
+      <workItem from="1672933985298" duration="5888000" />
+      <workItem from="1673035824588" duration="7000" />
     </task>
     <servers />
   </component>
