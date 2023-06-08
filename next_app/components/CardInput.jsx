@@ -1,124 +1,73 @@
-import React from "react"
+import React from "react";
 
 const CardInput = () => {
-
-
   return (
-    <div className="flex items-center justify-center p-12">
-      <div className="mx-auto w-full max-w-[550px] bg-white">
-        <form
-          className="py-6 px-9"
-          action="https://formbold.com/s/FORM_ID"
-          method="POST"
-        >
-          <div className="mb-5">
-            <label
-              for="email"
-              className="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Send files to this email:
+    <div
+      className="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover"
+      style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')",
+      }}
+    >
+      <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+      <div className="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+        <div className="text-center">
+          <h2 className="mt-5 text-3xl font-bold text-gray-900">
+            File Upload!
+          </h2>
+          <p className="mt-2 text-sm text-gray-400">
+            Lorem ipsum is placeholder text.
+          </p>
+        </div>
+        <form className="mt-8 space-y-3" action="#" method="POST">
+          <div className="grid grid-cols-1 space-y-2">
+            <label className="text-sm font-bold text-gray-500 tracking-wide">
+              Title
             </label>
             <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="example@domain.com"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+              type=""
+              placeholder="mail@gmail.com"
             />
           </div>
-
-          <div className="mb-6 pt-4">
-            <label className="mb-5 block text-xl font-semibold text-[#07074D]">
-              Upload File
+          <div className="grid grid-cols-1 space-y-2">
+            <label className="text-sm font-bold text-gray-500 tracking-wide">
+              Attach Document
             </label>
-
-            <div className="mb-8">
-              <input type="file" name="file" id="file" className="sr-only" />
-              <label
-                for="file"
-                className="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
-              >
-                <div>
-                  <span className="mb-2 block text-xl font-semibold text-[#07074D]">
-                    Drop files here
-                  </span>
-                  <span className="mb-2 block text-base font-medium text-[#6B7280]">
-                    Or
-                  </span>
-                  <span className="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
-                    Browse
-                  </span>
+            <div className="flex items-center justify-center w-full">
+              <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+                <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
+                  {/*<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>*/}
+                  <div className="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+                    <img
+                      className="has-mask h-36 object-center"
+                      src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                      alt="freepik image"
+                    />
+                  </div>
+                  <p className="pointer-none text-gray-500 ">
+                    <span className="text-sm">Drag and drop</span> files here{" "}
+                    <br /> or{" "}
+                    <a href="" id="" className="text-blue-600 hover:underline">
+                      select a file
+                    </a>{" "}
+                    from your computer
+                  </p>
                 </div>
+                <input type="file" className="hidden" />
               </label>
             </div>
-
-            <div className="mb-5 rounded-md bg-[#F5F7FB] py-4 px-8">
-              <div className="flex items-center justify-between">
-                <span className="truncate pr-3 text-base font-medium text-[#07074D]">
-                  banner-design.png
-                </span>
-                <button className="text-[#07074D]">
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.279337 0.279338C0.651787 -0.0931121 1.25565 -0.0931121 1.6281 0.279338L9.72066 8.3719C10.0931 8.74435 10.0931 9.34821 9.72066 9.72066C9.34821 10.0931 8.74435 10.0931 8.3719 9.72066L0.279337 1.6281C-0.0931125 1.25565 -0.0931125 0.651788 0.279337 0.279338Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.279337 9.72066C-0.0931125 9.34821 -0.0931125 8.74435 0.279337 8.3719L8.3719 0.279338C8.74435 -0.0931127 9.34821 -0.0931123 9.72066 0.279338C10.0931 0.651787 10.0931 1.25565 9.72066 1.6281L1.6281 9.72066C1.25565 10.0931 0.651787 10.0931 0.279337 9.72066Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="rounded-md bg-[#F5F7FB] py-4 px-8">
-              <div className="flex items-center justify-between">
-                <span className="truncate pr-3 text-base font-medium text-[#07074D]">
-                  banner-design.png
-                </span>
-                <button className="text-[#07074D]">
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.279337 0.279338C0.651787 -0.0931121 1.25565 -0.0931121 1.6281 0.279338L9.72066 8.3719C10.0931 8.74435 10.0931 9.34821 9.72066 9.72066C9.34821 10.0931 8.74435 10.0931 8.3719 9.72066L0.279337 1.6281C-0.0931125 1.25565 -0.0931125 0.651788 0.279337 0.279338Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.279337 9.72066C-0.0931125 9.34821 -0.0931125 8.74435 0.279337 8.3719L8.3719 0.279338C8.74435 -0.0931127 9.34821 -0.0931123 9.72066 0.279338C10.0931 0.651787 10.0931 1.25565 9.72066 1.6281L1.6281 9.72066C1.25565 10.0931 0.651787 10.0931 0.279337 9.72066Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="relative mt-5 h-[6px] w-full rounded-lg bg-[#E2E5EF]">
-                <div className="absolute left-0 right-0 h-full w-[75%] rounded-lg bg-[#6A64F1]"></div>
-              </div>
-            </div>
           </div>
-
+          <p className="text-sm text-gray-300">
+            <span>File type: doc,pdf,types of images</span>
+          </p>
           <div>
-            <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-              Send File
+            <button
+              type="submit"
+              className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+            >
+              Upload
             </button>
           </div>
         </form>
