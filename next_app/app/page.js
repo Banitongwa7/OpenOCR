@@ -1,9 +1,9 @@
-import Test from "@/components/Test"
+import CardInput from "@/components/CardInput"
+
 export default function Home() {
   return (
    <>
-    <h1>Hello World !!!!!!!!!!!</h1>
-    <Test />
+     <CardInput />
    </>
   )
 }
