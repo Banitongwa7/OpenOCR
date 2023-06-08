@@ -1,6 +1,0 @@
-create table files
-(
-    id_file int auto_increment
-        primary key,
-    fichier LONGBLOB NOT NULL
-);

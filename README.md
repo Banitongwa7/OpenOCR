@@ -1,2 +1,0 @@
-# OpenOCR
-Java EE Project
