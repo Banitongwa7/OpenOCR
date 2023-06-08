@@ -1,2 +1,4 @@
-# OpenOCR
-Java EE Project
+## OpenOCR
+
+- Next JS
+- Node JS
