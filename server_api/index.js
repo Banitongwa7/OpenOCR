@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
     res.send({ message: 'Hello World' })
 })
 
+app.post('/upload', (req, res) => {
+    console.log(req.body)
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
