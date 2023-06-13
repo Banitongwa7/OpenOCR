@@ -1,6 +1,8 @@
 "use client";
 
 import React, {useState} from "react";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FormInput = () => {
   const [value, setValue] = useState({
@@ -9,9 +11,25 @@ const FormInput = () => {
     image: "",
   });
 
+  const notify = () => {
+    toast.success("Felicitations ! Votre image a été ajoutée !", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+    toast.loading("Extraction du texte en cours...", {
+      position: toast.POSITION.TOP_CENTER,
+    })
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
+    notify();
   }
 
 
@@ -102,6 +120,7 @@ const FormInput = () => {
           </div>
         </form>
       </section>
+      <ToastContainer/>
     </>
   );
 };
