@@ -1,14 +1,28 @@
-import React from "react";
+"use client";
+
+import React, {useState} from "react";
 
 const FormInput = () => {
+  const [value, setValue] = useState({
+    title: "",
+    language: "",
+    image: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(value);
+  }
+
+
   return (
     <>
       <section className="w-[50%] p-6 mx-auto bg-gray-200 rounded-md shadow-xl mt-24">
         <h1 className="text-xl font-bold text-center text-gray-700 capitalize">
           OpenOCR - Free OCR Tool
         </h1>
-        <form>
-          <div>
+        <form onSubmit={handleSubmit}>
+          <div className="space-y-9">
             <div>
               <label className="text-gray-700" for="titre">
                 Titre
@@ -17,6 +31,7 @@ const FormInput = () => {
                 id="titre"
                 type="text"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+                onChange={(e) => setValue({...value, title: e.target.value})}
               />
             </div>
 
@@ -31,9 +46,10 @@ const FormInput = () => {
                 id="selectLanguage"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 required
+                onChange={(e) => setValue({...value, language: e.target.value})}
               >
-                <option>Français - Fr</option>
-                <option>Anglais - En</option>
+                <option value="Fr" selected>Français - Fr</option>
+                <option value="En">Anglais - En</option>
               </select>
             </div>
 
@@ -68,18 +84,19 @@ const FormInput = () => {
                         name="file-upload"
                         type="file"
                         className="sr-only"
+                        onChange={(e) => setValue({...value, image: e.target.files[0]})}
                       />
                     </label>
                     <p className="pl-1 text-gray-700">or drag and drop</p>
                   </div>
-                  <p className="text-xs text-gray-700">PNG, JPG, GIF up to 10MB</p>
+                  <p className="text-xs text-gray-700">PNG, JPG up to 10MB</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="flex justify-center mt-6">
-            <button className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">
+            <button type="submit" className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">
               Extraction de texte
             </button>
           </div>
