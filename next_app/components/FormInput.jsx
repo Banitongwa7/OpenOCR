@@ -42,7 +42,7 @@ const FormInput = () => {
         <form onSubmit={handleSubmit}>
           <div className="space-y-9">
             <div>
-              <label className="text-gray-700" for="titre">
+              <label className="text-gray-700" htmlFor="titre">
                 Titre
               </label>
               <input
@@ -56,7 +56,7 @@ const FormInput = () => {
             <div>
               <label
                 className="text-gray-700"
-                for="selectLanguage"
+                htmlFor="selectLanguage"
               >
                 Langue du texte <span className="text-red-500">*</span>
               </label>
@@ -93,7 +93,7 @@ const FormInput = () => {
                   </svg>
                   <div className="flex text-sm text-gray-600">
                     <label
-                      for="file-upload"
+                      htmlFor="file-upload"
                       className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                     >
                       <span className="">Upload a file</span>
