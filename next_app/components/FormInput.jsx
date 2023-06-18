@@ -3,6 +3,8 @@
 import React, {useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import UrlAPI from "@/utils/UrlAPI";
 
 const FormInput = () => {
   const [value, setValue] = useState({
@@ -11,7 +13,7 @@ const FormInput = () => {
     image: "",
   });
 
-  const notify = () => {
+  const notifySuccess = () => {
     toast.success("Felicitations ! Votre image a été ajoutée !", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 5000,
@@ -27,9 +29,27 @@ const FormInput = () => {
     })
   };
 
+  const notifyError = () => {
+    toast.error("Une erreur est survenue !", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    notify();
+    axios.post(UrlAPI.upload, value).then((res) => {
+      console.log(res.data);
+      notifySuccess();
+    }).catch((err) => {
+      console.log(err);
+      notifyError();
+    })
   }
 
 
