@@ -7,11 +7,9 @@ import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
 
 const FormInput = () => {
-  const [value, setValue] = useState({
-    title: "",
-    language: "",
-    image: "",
-  });
+  const [image, setImage] = useState(null)
+  const [title, setTitle] = useState("")
+  const [language, setLanguage] = useState("fra")
 
   const notifySuccess = () => {
     toast.success("Felicitations ! Votre image a été ajoutée !", {
@@ -43,7 +41,16 @@ const FormInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(UrlAPI.upload, value).then((res) => {
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("language", language);
+
+    axios.post(UrlAPI.upload, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }).then((res) => {
       console.log(res.data);
       notifySuccess();
     }).catch((err) => {
@@ -51,6 +58,7 @@ const FormInput = () => {
       notifyError();
     })
   }
+
 
 
   return (
@@ -69,7 +77,7 @@ const FormInput = () => {
                 id="titre"
                 type="text"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
-                onChange={(e) => setValue({...value, title: e.target.value})}
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
 
@@ -83,8 +91,7 @@ const FormInput = () => {
               <select
                 id="selectLanguage"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                required
-                onChange={(e) => setValue({...value, language: e.target.value})}
+                onChange={(e) => setLanguage(e.target.value)}
               >
                 <option value="fra" selected>Français - Fr</option>
                 <option value="eng">Anglais - En</option>
@@ -122,7 +129,7 @@ const FormInput = () => {
                         name="file-upload"
                         type="file"
                         className="sr-only"
-                        onChange={(e) => setValue({...value, image: e.target.files[0]})}
+                        onChange={(e) => setImage(e.target.files[0])}
                       />
                     </label>
                     <p className="pl-1 text-gray-700">or drag and drop</p>

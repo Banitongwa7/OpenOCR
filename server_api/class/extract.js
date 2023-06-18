@@ -1,12 +1,14 @@
-const tesseract = require('tesseract.js');
+const Tesseract = require('tesseract.js')
+const path = require('path')
 
-class Extract {
+
+class extract {
     constructor(file) {
         this.file = file
     }
 
     valideExtension() {
-        let extension = file.getExtension()
+        let extension = this.file.getExtension()
         if (extension != 'png' && extension != 'jpg' && extension != 'jpeg') {
             return false
         }
@@ -14,11 +16,40 @@ class Extract {
     }
 
     getText() {
-        let text = tesseract.recognize(this.file.image, this.file.language, {
-            logger: (m) => console.log(m)
-        }).then((result) => {
-            return result.text
+        Tesseract.recognize(
+            path.resolve(__dirname, `../uploads/${this.file.image.filename}`),
+            'fra',
+            {
+                logger: m => console.log(m),
+            }
+        ).then(({ data: { text } }) => {
+            console.log(text);
+        }).catch(err => {
+            console.log(err);
         })
-        return text
+
+        /*
+        const worker = createWorker().then(worker => {
+            worker.loadLanguage('fra')
+            worker.initialize('fra')
+            worker.recognize(this.file.image)
+            return worker
+        })
+
+        return new Promise((resolve, reject) => {
+            worker.then(worker => {
+                worker.getUTF8Text().then(text => {
+                    console.log(text)
+                    resolve(text)
+                })
+            })
+            worker.catch(err => {
+                reject(err)
+            })
+
+        })
+        */
     }
 }
+
+module.exports = extract

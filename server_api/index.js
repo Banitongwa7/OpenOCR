@@ -1,8 +1,10 @@
 const express = require('express')
 const cors = require('cors')
+const multer = require('multer')
 const app = express()
 const port = 3500
-const file = require('./class/file')
+const filedata = require('./class/filedata')
+const extract = require('./class/extract')
 
 app.use(cors(
     {
@@ -14,6 +16,20 @@ app.use(cors(
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Configurer Multer pour gérer les fichiers reçus
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+})
+
+const upload = multer({
+    storage
+})
+
 app.get('/', (req, res) => {
     res.send({ 
         message: 'Server is running',
@@ -22,15 +38,20 @@ app.get('/', (req, res) => {
      })
 })
 
-app.post('/upload', (req, res) => {
-    const { title, image, language } = req.body
-    const file = new file(title, image, language)
-    //const extract = new Extract(file)
-    console.log("*************************************************")
-    console.log(file.title)
-    console.log(file.image)
-    console.log(file.language)
-    console.log("*************************************************")
+app.post('/upload', upload.single('image'), (req, res) => {
+    const title = req.body.title
+    const imageFile = req.file
+    const language = req.body.language
+    
+    // class filedata
+    const file = new filedata(title, imageFile, language)
+    const process = new extract(file)
+
+
+    console.log("*****************")
+    console.log(imageFile)
+    process.getText()
+    console.log("*****************")
     /*
     if (extract.valideExtension()) {
         const text = extract.getText()
@@ -39,6 +60,8 @@ app.post('/upload', (req, res) => {
         res.send({ statut: 400 })
     }
     */
+
+    res.send({ statut: 200 })
 })
 
 app.listen(port, () => {
