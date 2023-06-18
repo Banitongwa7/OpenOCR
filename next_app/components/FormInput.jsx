@@ -66,8 +66,8 @@ const FormInput = () => {
                 required
                 onChange={(e) => setValue({...value, language: e.target.value})}
               >
-                <option value="Fr" selected>Français - Fr</option>
-                <option value="En">Anglais - En</option>
+                <option value="fra" selected>Français - Fr</option>
+                <option value="eng">Anglais - En</option>
               </select>
             </div>
 
