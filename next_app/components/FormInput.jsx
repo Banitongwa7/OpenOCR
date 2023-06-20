@@ -1,12 +1,11 @@
 "use client";
-
 import React, {useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
 
-const FormInput = () => {
+const FormInput = ({setDisplayResult}) => {
   const [image, setImage] = useState(null)
   const [title, setTitle] = useState("")
   const [language, setLanguage] = useState("fra")
@@ -21,10 +20,6 @@ const FormInput = () => {
       draggable: true,
       progress: undefined,
     });
-
-    toast.loading("Extraction du texte en cours...", {
-      position: toast.POSITION.TOP_CENTER,
-    })
   };
 
   const notifyError = () => {
@@ -41,6 +36,7 @@ const FormInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    /*
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
@@ -57,6 +53,9 @@ const FormInput = () => {
       console.log(err);
       notifyError();
     })
+    */
+  notifySuccess();
+  setDisplayResult(true)
   }
 
 
