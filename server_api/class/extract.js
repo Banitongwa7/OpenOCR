@@ -27,28 +27,6 @@ class extract {
         }).catch(err => {
             console.log(err);
         })
-
-        /*
-        const worker = createWorker().then(worker => {
-            worker.loadLanguage('fra')
-            worker.initialize('fra')
-            worker.recognize(this.file.image)
-            return worker
-        })
-
-        return new Promise((resolve, reject) => {
-            worker.then(worker => {
-                worker.getUTF8Text().then(text => {
-                    console.log(text)
-                    resolve(text)
-                })
-            })
-            worker.catch(err => {
-                reject(err)
-            })
-
-        })
-        */
     }
 }
 
