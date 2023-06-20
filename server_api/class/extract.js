@@ -1,5 +1,6 @@
 const Tesseract = require('tesseract.js')
 const path = require('path')
+const fs = require('fs')
 
 
 class extract {
@@ -16,17 +17,28 @@ class extract {
     }
 
     getText(res) {
-        Tesseract.recognize(
-            path.resolve(__dirname, `../uploads/${this.file.image.filename}`),
-            this.file.language,
-            {
-                logger: m => console.log(m),
+        let pathImage = path.resolve(__dirname, `../uploads/${this.file.image.filename}`)
+
+        fs.readFile(pathImage, (err, data) => {
+            if (err) {
+                console.log(err)
+                res.json({ statut: 400 })
+                return
             }
-        ).then(({ data: { text } }) => {
-            res.send({ text: text, path: path.resolve(__dirname, `../uploads/${this.file.image.filename}`)})
-        }).catch(err => {
-            console.log(err);
+
+            Tesseract.recognize(
+                pathImage,
+                this.file.language,
+                {
+                    logger: m => console.log(m),
+                }
+            ).then(({ data: { text } }) => {
+                res.json({ text: text, image: `data:image/png;base64,${data.toString('base64')}` })
+            }).catch(err => {
+                res.json({ statut: 400 })
+            })
         })
+
     }
 }
 

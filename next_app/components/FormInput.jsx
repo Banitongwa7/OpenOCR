@@ -11,7 +11,7 @@ const FormInput = ({setDisplayResult, setData}) => {
   const [language, setLanguage] = useState("fra")
 
   const notifySuccess = () => {
-    toast.success("Felicitations ! Votre image a été ajoutée !", {
+    toast.success("Felicitations ! Vous avez terminé l'extraction avec succès !", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 5000,
       hideProgressBar: false,
@@ -47,7 +47,7 @@ const FormInput = ({setDisplayResult, setData}) => {
       }
     }).then((res) => {
       setData({
-        image: res.data.path,
+        image: res.data.image,
         text: res.data.text
       })
       notifySuccess();
@@ -91,8 +91,9 @@ const FormInput = ({setDisplayResult, setData}) => {
                 id="selectLanguage"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 onChange={(e) => setLanguage(e.target.value)}
+                defaultValue={"fra"}
               >
-                <option value="fra" selected>Français - Fr</option>
+                <option value="fra">Français - Fr</option>
                 <option value="eng">Anglais - En</option>
               </select>
             </div>
@@ -112,9 +113,9 @@ const FormInput = ({setDisplayResult, setData}) => {
                   >
                     <path
                       d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                   <div className="flex text-sm text-gray-600">

@@ -13,8 +13,6 @@ export default function Home() {
   })
   const [displayResult, setDisplayResult] = useState(false)
 
-
-
   useEffect(() => {
     const interval = setInterval(() => {
       setLoad(true)
@@ -26,13 +24,14 @@ export default function Home() {
    <>
       {
         displayResult ? (
-        load ? (
-          <Resultat data={data}/>
-        ): (
-          <Loader />
-        )
+          load ? (
+            <Resultat data={data} setLoad={setLoad}/>
+          ): (
+            <Loader />
+          )
         ) : (<FormInput setDisplayResult={setDisplayResult} setData={setData}/>)
       }
+
    </>
   )
 }

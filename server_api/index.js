@@ -48,6 +48,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
     const process = new extract(file)
 
     process.getText(res)
+    
 })
 
 app.listen(port, () => {
