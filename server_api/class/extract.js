@@ -15,15 +15,15 @@ class extract {
         return true
     }
 
-    getText() {
+    getText(res) {
         Tesseract.recognize(
             path.resolve(__dirname, `../uploads/${this.file.image.filename}`),
-            'fra',
+            this.file.language,
             {
                 logger: m => console.log(m),
             }
         ).then(({ data: { text } }) => {
-            console.log(text);
+            res.send({ text: text, path: path.resolve(__dirname, `../uploads/${this.file.image.filename}`)})
         }).catch(err => {
             console.log(err);
         })

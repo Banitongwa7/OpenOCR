@@ -7,7 +7,10 @@ import Resultat from "@/components/Resultat";
 
 export default function Home() {
   const [load, setLoad] = useState(false)
-  const [data, setData] = useState("Hello les gens")
+  const [data, setData] = useState({
+    image: null,
+    text: "",
+  })
   const [displayResult, setDisplayResult] = useState(false)
 
 
@@ -21,13 +24,15 @@ export default function Home() {
 
   return (
    <>
-      displayResult ? (
+      {
+        displayResult ? (
         load ? (
           <Resultat data={data}/>
         ): (
           <Loader />
         )
-      ) : (<FormInput setDisplayResult={setDisplayResult}/>)
+        ) : (<FormInput setDisplayResult={setDisplayResult} setData={setData}/>)
+      }
    </>
   )
 }

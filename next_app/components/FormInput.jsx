@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
 
-const FormInput = ({setDisplayResult}) => {
+const FormInput = ({setDisplayResult, setData}) => {
   const [image, setImage] = useState(null)
   const [title, setTitle] = useState("")
   const [language, setLanguage] = useState("fra")
@@ -36,7 +36,6 @@ const FormInput = ({setDisplayResult}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
@@ -47,15 +46,16 @@ const FormInput = ({setDisplayResult}) => {
         "Content-Type": "multipart/form-data"
       }
     }).then((res) => {
-      console.log(res.data);
+      setData({
+        image: res.data.path,
+        text: res.data.text
+      })
       notifySuccess();
     }).catch((err) => {
       console.log(err);
       notifyError();
     })
-    */
-  notifySuccess();
-  setDisplayResult(true)
+    setDisplayResult(true)
   }
 
 

@@ -11,7 +11,7 @@ const Resultat = ({ data }) => {
       <Image
           src="https://picsum.photos/id/159/200/300"
           alt="Album"
-          className='sm:rounded-s-lg rounded-t-lg'
+          className='rounded-s-lg'
           width={500}
           height={300}
         />
@@ -21,8 +21,7 @@ const Resultat = ({ data }) => {
           Voici le résultat de l'extraction
         </h5>
         <p className="mb-3 text-sm text-neutral-400">
-          {data}
-          lorem ipsum dolor sit amet consectetur adipisicing elit
+          {data.text}
         </p>
       </div>
     </div>

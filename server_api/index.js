@@ -47,23 +47,9 @@ app.post('/upload', upload.single('image'), (req, res) => {
     const file = new filedata(title, imageFile, language)
     const process = new extract(file)
 
-
-    console.log("*****************")
-    console.log(imageFile)
-    process.getText()
-    console.log("*****************")
-    /*
-    if (extract.valideExtension()) {
-        const text = extract.getText()
-        console.log()
-    }else{
-        res.send({ statut: 400 })
-    }
-    */
-
-    res.send({ statut: 200 })
+    process.getText(res)
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`OpenOCR server listening on port ${port}`)
 })
