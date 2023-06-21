@@ -8,6 +8,7 @@ class filedata {
     getExtension() {
         return this.image.filename.split('.').pop();
     }
+
 }
 
 module.exports = filedata

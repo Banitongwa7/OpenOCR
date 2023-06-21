@@ -34,6 +34,18 @@ const FormInput = ({setDisplayResult, setData}) => {
     });
   }
 
+  const notifyErrorFile = () => {
+    toast.error("Fichier invalide ! veuillez réessayer avec un autre fichier !", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -46,16 +58,20 @@ const FormInput = ({setDisplayResult, setData}) => {
         "Content-Type": "multipart/form-data"
       }
     }).then((res) => {
+      console.log(res.data)
       setData({
         image: res.data.image,
         text: res.data.text
       })
       notifySuccess();
+      setDisplayResult(true)
     }).catch((err) => {
-      console.log(err);
-      notifyError();
+      if (err.response.message === "Fichier invalide") {
+        notifyErrorFile();
+      }else{
+        notifyError();
+      }
     })
-    setDisplayResult(true)
   }
 
 

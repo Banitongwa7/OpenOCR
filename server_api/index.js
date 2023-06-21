@@ -46,8 +46,12 @@ app.post('/upload', upload.single('image'), (req, res) => {
     // class filedata
     const file = new filedata(title, imageFile, language)
     const process = new extract(file)
-
-    process.getText(res)
+    
+    if (process.valideExtension()) {
+        process.getText(res)
+    }else{
+        res.json({ statut: 400, message: 'Fichier invalide' })
+    }
     
 })
 
