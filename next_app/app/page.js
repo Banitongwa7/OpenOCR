@@ -14,10 +14,17 @@ export default function Home() {
   const [displayResult, setDisplayResult] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    
+  }, [])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
       setLoad(true)
-    }, 10000)
-    return () => clearInterval(interval)
+    }, 5000)
+    setLoad(false)
+    return () => {
+      clearTimeout(timeout)
+    }
   }, [displayResult])
 
   return (

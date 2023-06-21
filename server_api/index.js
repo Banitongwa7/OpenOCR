@@ -50,7 +50,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
     if (process.valideExtension()) {
         process.getText(res)
     }else{
-        res.json({ statut: 400, message: 'Fichier invalide' })
+        res.status(400).send("Fichier invalide")
     }
     
 })

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Resultat = ({ data, setLoad}) => {
 
@@ -8,8 +10,25 @@ const Resultat = ({ data, setLoad}) => {
     window.location.reload(true)
   }
 
+  const notifySuccess = () => {
+    toast.success("Felicitations ! Vous avez terminé l'extraction avec succès !", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  useEffect(() => {
+    notifySuccess();
+  },[])
+
   return (
-    <div className="container w-full">
+    <>
+      <div className="container w-full">
       <div className="flex flex-col rounded-lg bg-neutral-700 md:flex-row w-[80%] m-auto mt-24">
         <div className="flex flex-col justify-center p-6 w-full">
           <img src={data.image} alt="test" className="w-full" />
@@ -31,6 +50,8 @@ const Resultat = ({ data, setLoad}) => {
         </button>
       </div>
     </div>
+    <ToastContainer/>
+    </>
   );
 };
 

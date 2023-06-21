@@ -10,18 +10,6 @@ const FormInput = ({setDisplayResult, setData}) => {
   const [title, setTitle] = useState("")
   const [language, setLanguage] = useState("fra")
 
-  const notifySuccess = () => {
-    toast.success("Felicitations ! Vous avez terminé l'extraction avec succès !", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
-
   const notifyError = () => {
     toast.error("Une erreur est survenue !", {
       position: toast.POSITION.TOP_CENTER,
@@ -33,6 +21,8 @@ const FormInput = ({setDisplayResult, setData}) => {
       progress: undefined,
     });
   }
+
+ 
 
   const notifyErrorFile = () => {
     toast.error("Fichier invalide ! veuillez réessayer avec un autre fichier !", {
@@ -58,15 +48,13 @@ const FormInput = ({setDisplayResult, setData}) => {
         "Content-Type": "multipart/form-data"
       }
     }).then((res) => {
-      console.log(res.data)
       setData({
         image: res.data.image,
         text: res.data.text
       })
-      notifySuccess();
       setDisplayResult(true)
     }).catch((err) => {
-      if (err.response.message === "Fichier invalide") {
+      if (err.response.data === "Fichier invalide") {
         notifyErrorFile();
       }else{
         notifyError();
