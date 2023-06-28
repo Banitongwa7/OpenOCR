@@ -1,11 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Context from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
-const Resultat = ({ setLoad}) => {
-  const {data, setData} = useContext(Context)
+const Resultat = ({ setLoad, data}) => {
   const router = useRouter()
 
   // refresh the page
@@ -35,7 +33,7 @@ const Resultat = ({ setLoad}) => {
       <div className="container w-full">
       <div className="flex flex-col rounded-lg bg-neutral-700 md:flex-row w-[80%] m-auto mt-24">
         <div className="flex flex-col justify-center p-6 w-full">
-          <img src={data.image} alt="test" className="w-full" />
+         <img src={data.image} alt="test" className="w-full" />
         </div>
         <div className="flex flex-col justify-start p-6 w-full">
           <h5 className="mb-2 text-xl font-medium text-neutral-50">

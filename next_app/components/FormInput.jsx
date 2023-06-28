@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
 import Context from "@/context/Context";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 const FormInput = () => {
   const [image, setImage] = useState(null)
