@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Context from "react";
+import { useRouter } from "next/navigation";
 
-const Resultat = ({ data, setLoad}) => {
+const Resultat = ({ setLoad}) => {
+  const {data, setData} = useContext(Context)
+  const router = useRouter()
 
   // refresh the page
   const handleRefreshPage = () => {
     setLoad(false)
-    window.location.reload(true)
+    router.push("/")
   }
 
   const notifySuccess = () => {

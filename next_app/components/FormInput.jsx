@@ -1,14 +1,18 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
+import Context from "@/context/Context";
+import { useRouter } from "next/navigation";
 
-const FormInput = ({setDisplayResult, setData}) => {
+const FormInput = () => {
   const [image, setImage] = useState(null)
   const [title, setTitle] = useState("")
   const [language, setLanguage] = useState("fra")
+  const {data, setData} = useContext(Context)
+  const router = useRouter()
 
   const notifyError = () => {
     toast.error("Une erreur est survenue !", {
@@ -52,7 +56,9 @@ const FormInput = ({setDisplayResult, setData}) => {
         image: res.data.image,
         text: res.data.text
       })
-      setDisplayResult(true)
+
+      // redirect to resultat
+      router.push("/resultat")
     }).catch((err) => {
       if (err.response.data === "Fichier invalide") {
         notifyErrorFile();

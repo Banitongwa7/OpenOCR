@@ -1,10 +1,14 @@
-import './../styles/globals.css'
+import "./../styles/globals.css";
+import DataContextProvider from "@/context/DataContextProvider";
 
-function MyApp({Component, pageProps}) {
-    
+function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
-  )
+    <>
+      <DataContextProvider>
+        <Component {...pageProps} />
+      </DataContextProvider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
