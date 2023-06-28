@@ -1,11 +1,11 @@
 "use client";
 import React, {useState, useContext} from "react";
-import {toast, ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import UrlAPI from "@/utils/UrlAPI";
 import Context from "@/context/Context";
 import { useRouter } from "next/router";
+import { notifyErrorFile, notifyError } from "@/utils/NotifyType";
+import ToastNotify from "@/utils/ToastNotify";
 
 const FormInput = () => {
   const [image, setImage] = useState(null)
@@ -14,64 +14,46 @@ const FormInput = () => {
   const {data, setData} = useContext(Context)
   const router = useRouter()
 
-  const notifyError = () => {
-    toast.error("Une erreur est survenue !", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
-
- 
-
-  const notifyErrorFile = () => {
-    toast.error("Fichier invalide ! veuillez réessayer avec un autre fichier !", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("language", language);
+    if (!image || !title || !language) {
+      notifyErrorFile();
+      return;
+    }else if(image.type !== "image/jpeg" && image.type !== "image/png"){
+      notifyErrorFile();
+      return;
+    }else{
+      formData.append("image", image);
+      formData.append("title", title);
+      formData.append("language", language);
 
-    axios.post(UrlAPI.upload, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }).then((res) => {
-      setData({
-        image: res.data.image,
-        text: res.data.text
+      axios.post(UrlAPI.upload, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then((res) => {
+        setData({
+          image: res.data.image,
+          text: res.data.text
+        })
+  
+        // redirect to resultat
+        router.push("/resultat")
+      }).catch((err) => {
+        if (err.response.data === "Fichier invalide") {
+          notifyErrorFile();
+        }else{
+          notifyError();
+        }
       })
-
-      // redirect to resultat
-      router.push("/resultat")
-    }).catch((err) => {
-      if (err.response.data === "Fichier invalide") {
-        notifyErrorFile();
-      }else{
-        notifyError();
-      }
-    })
+    }
   }
 
 
 
   return (
-    <>
+    <ToastNotify>
       <section className="w-[50%] p-6 mx-auto bg-gray-200 rounded-md shadow-xl mt-24">
         <h1 className="text-xl font-bold text-center text-gray-700 capitalize">
           OpenOCR - Free OCR Tool
@@ -157,8 +139,7 @@ const FormInput = () => {
           </div>
         </form>
       </section>
-      <ToastContainer/>
-    </>
+    </ToastNotify>
   );
 };
 

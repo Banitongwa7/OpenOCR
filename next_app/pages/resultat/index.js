@@ -10,7 +10,7 @@ export default function index() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoad(true);
-    }, 3000);
+    }, 10000);
     return () => {
       clearTimeout(timeout);
     };
