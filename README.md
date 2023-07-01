@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
- <img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200">
+ <img src="./next_app/public/logo.png" alt="Logo OpenOCR" width="300">
   <br>
   OpenOCR
   <br>
@@ -9,17 +9,10 @@
 <h4 align="center">A free OCR tool.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
+ <img alt="Crates.io" src="https://img.shields.io/crates/l/create">
+ <img alt="GitHub issues" src="https://img.shields.io/github/issues/Banitongwa7/Banitongwa7/VFriend.git?color=%23ff6c6c&label=Issues">
+ <img alt="GitHub forks" src="https://img.shields.io/github/forks/Banitongwa7/VFriend.git?style=social">
+ <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Banitongwa7/VFriend.git?style=social">
 </p>
 
 ## Key Features
