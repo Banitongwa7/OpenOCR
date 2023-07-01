@@ -11,8 +11,9 @@
 <p align="center">
  <img alt="Crates.io" src="https://img.shields.io/crates/l/create">
  <img alt="GitHub issues" src="https://img.shields.io/github/issues/Banitongwa7/Banitongwa7/VFriend.git?color=%23ff6c6c&label=Issues">
- <img alt="GitHub forks" src="https://img.shields.io/github/forks/Banitongwa7/VFriend.git?style=social">
- <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Banitongwa7/VFriend.git?style=social">
+ <img alt="GitHub forks" src="https://img.shields.io/github/forks/Banitongwa7/VFriend.svg">
+ <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Banitongwa7/VFriend.svg">
+ <img alt="Watchers" src="https://img.shields.io/github/watchers/Banitongwa7/VFriend.svg">
 </p>
 
 ## Key Features
