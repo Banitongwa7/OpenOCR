@@ -30,7 +30,7 @@ class extract {
                 pathImage,
                 this.file.language,
                 {
-                    logger: m => console.log(m),
+                    logger: m => console.log(m)
                 }
             ).then(({ data: { text } }) => {
                 res.json({ text: text, image: `data:image/png;base64,${data.toString('base64')}` })
