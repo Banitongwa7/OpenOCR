@@ -30,7 +30,7 @@ class extract {
                 pathImage,
                 this.file.language,
                 {
-                    logger: m => console.log(m)
+                    logger: m => fs.writeFileSync(path.resolve(__dirname, `../logs/${this.file.image.filename}.log`), JSON.stringify(m), { flag: 'a' }),
                 }
             ).then(({ data: { text } }) => {
                 res.json({ text: text, image: `data:image/png;base64,${data.toString('base64')}` })
