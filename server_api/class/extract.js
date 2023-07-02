@@ -30,7 +30,13 @@ class extract {
                 pathImage,
                 this.file.language,
                 {
-                    logger: m => console.log(m),
+                    logger: m => fs.writeFile(path.resolve(__dirname, `../logs/${this.file.image.filename}.log`), m, (err) => {
+                        if (err) {
+                            console.log(err)
+                        }else{
+                            console.log("Log saved")
+                        }
+                    }),
                 }
             ).then(({ data: { text } }) => {
                 res.json({ text: text, image: `data:image/png;base64,${data.toString('base64')}` })
