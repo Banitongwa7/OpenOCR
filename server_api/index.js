@@ -3,23 +3,15 @@ const cors = require("cors");
 const app = express();
 const port = 3500;
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+// Cors
+app.use(cors({origin: "http://localhost:3000",credentials: true,}));
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.send({
-    message: "Server is running",
-  });
-});
-
+// API
+app.get("/", (req, res) => {res.send({message: "Server is running",});});
 app.use("/upload", require("./routes/file.routes"));
 
 app.listen(port, () => {

@@ -23,6 +23,6 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/upload", upload.single("image"), setFile);
+router.post("/", upload.single("image"), setFile);
 
 module.exports = router;
