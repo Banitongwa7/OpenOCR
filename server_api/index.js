@@ -6,15 +6,16 @@ const port = 3500
 const filedata = require('./class/filedata')
 const extract = require('./class/extract')
 
+// middlewares
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.use(cors(
     {
         origin: 'http://localhost:3000',
         credentials: true
     }
 ))
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
 
 // Configurer Multer pour gérer les fichiers reçus
 const storage = multer.diskStorage({
@@ -52,8 +53,10 @@ app.post('/upload', upload.single('image'), (req, res) => {
     }else{
         res.status(400).send("Fichier invalide")
     }
-    
 })
+
+app.use('/api/file', require('./routes/file.route'))
+
 
 app.listen(port, () => {
     console.log(`OpenOCR server listening on port ${port}`)
