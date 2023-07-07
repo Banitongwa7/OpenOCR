@@ -11,7 +11,11 @@ module.exports.setFile = (req, res) => {
     const process = new extract(file);
   
     if (process.valideExtension()) {
-      process.getText(res);
+      process.getText().then((resp) => {
+        res.status(200).send(resp);
+      }).catch((err) => {
+        res.status(400).send(err);
+      })
     } else {
       res.status(400).send("Fichier invalide");
     }
