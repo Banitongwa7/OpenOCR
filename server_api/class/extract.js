@@ -16,7 +16,7 @@ class extract {
         return true
     }
 
-    getText(res) {
+    async getText() {
         let pathImage = path.resolve(__dirname, `../uploads/${this.file.image.filename}`)
 
         fs.readFile(pathImage, (err, data) => {
@@ -33,9 +33,9 @@ class extract {
                     logger: m => fs.writeFileSync(path.resolve(__dirname, `../logs/${this.file.image.filename}.log`), JSON.stringify(m), { flag: 'a' }),
                 }
             ).then(({ data: { text } }) => {
-                res.json({ text: text, image: `data:image/png;base64,${data.toString('base64')}` })
+                return { text: text, image: `data:image/png;base64,${data.toString('base64')}` }
             }).catch(err => {
-                res.json({ statut: 400 })
+                console.log(err)
             })
         })
 

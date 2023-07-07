@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import Test from "@/components/Test";
+import FormInput from "@/components/FormInput";
 
 export default function Home() {
 
   return (
    <>
-   <Test />
+   <FormInput />
    </>
   )
 }
