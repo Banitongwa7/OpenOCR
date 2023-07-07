@@ -12,7 +12,10 @@ module.exports.setFile = (req, res) => {
   
     if (process.valideExtension()) {
       process.getText().then(resp => {
-        res.json(resp)
+        console.log("*************************")
+        console.log(resp)
+        console.log("********************")
+        res.status(400).send("Erreur")
       }).catch(err => {
         res.json({ statut: 400 })
       })
