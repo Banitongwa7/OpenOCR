@@ -12,7 +12,7 @@ module.exports.setFile = (req, res) => {
   
     if (process.valideExtension()) {
       process.getText().then((resp) => {
-        res.status(200).send(resp);
+        res.status(200).send({text: resp, image: "https://tesseract.projectnaptha.com/img/eng_bw.png"});
       }).catch((err) => {
         res.status(400).send(err);
       })
